@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnRange = 9.0f;
     public int enemyCount;
     public int waveNumber = 1;
+    public GameObject[] enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,10 @@ public class SpawnManager : MonoBehaviour
         Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
     }
 
+      public void SpawnRandomenemy()
+     {
+         Instantiate(enemy[UnityEngine.Random.Range(0, enemy.Length - 1)]);
+     }
     // Update is called once per frame
     void Update()
     {
